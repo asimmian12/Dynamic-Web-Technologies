@@ -1,15 +1,27 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 
+import Dashboard from "./pages/Dashboard";
+import TravelLogs from "./pages/TravelLogs";
 
 export default function App() {
-
   return (
-    <>
-      <h1>Hello</h1>
-    </>
-  )
-}
+      <BrowserRouter>
+        <div className="app-shell">
+          <nav className="main-nav" aria-label="Main navigation">
+            <Link to="/">Dashboard</Link>
+            <Link to="/logs">Travel Logs</Link>
+          </nav>
 
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/logs" element={<TravelLogs />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+  );
+}
