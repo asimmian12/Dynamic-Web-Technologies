@@ -17,7 +17,9 @@ export default function CreateReport() {
     function handlePhotoChange(event) {
         const file = event.target.files[0];
 
-        if (!file) return;
+        if (!file){
+            return;
+        };
 
         const reader = new FileReader();
 
@@ -140,8 +142,13 @@ export default function CreateReport() {
             return;
         }
 
-        if (!latitude || !longitude) {
-            console.log("Location is required");
+        if (!latitude) {
+            console.log("Latitude is required");
+            return;
+        }
+        
+        if (!longitude) {
+            console.log("Longitude is required");
             return;
         }
 
