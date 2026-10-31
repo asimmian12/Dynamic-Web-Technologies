@@ -1,27 +1,26 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link,
-} from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './pages/Home';
+import CreateReport from './pages/CreateReport';
+import Reports from './pages/Reports';
+import ReportDetails from './pages/ReportDetails';
+import EditReport from './pages/EditReport';
+import Navbar from "../src/componets/Navbar";
 
-import Dashboard from "./pages/Dashboard";
-import TravelLogs from "./pages/TravelLogs";
 
 export default function App() {
+  
   return (
-      <BrowserRouter>
-        <div className="app-shell">
-          <nav className="main-nav" aria-label="Main navigation">
-            <Link to="/">Dashboard</Link>
-            <Link to="/logs">Travel Logs</Link>
-          </nav>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
 
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/logs" element={<TravelLogs />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
+        <Route path="/" element={<Home />} />
+        <Route path="/reports/new" element={<CreateReport />} />
+        <Route path="/reports" element={<Reports />} />
+        <Route path="/reports/:id" element={<ReportDetails />} />
+        <Route path="/reports/:id/edit" element={<EditReport />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
