@@ -5,7 +5,6 @@ export default function Reports() {
     const [reports, setReports] = useState(JSON.parse(localStorage.getItem("reports")) || []);
     const navigate = useNavigate();
 
-
     function deleteReport(id) {
         const updatedReports = reports.filter(
             report => report.id !== id
