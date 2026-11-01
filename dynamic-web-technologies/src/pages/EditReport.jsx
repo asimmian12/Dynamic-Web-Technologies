@@ -24,6 +24,8 @@ export default function EditReport() {
     const [title, setTitle] = useState(report.title);
     const [category, setCategory] = useState(report.category);
     const [description, setDescription] = useState(report.description);
+    const [status, setStatus] = useState(report.status || "Open");
+
 
     const [photo, setPhoto] = useState(report.photo || []);
 
@@ -50,6 +52,7 @@ export default function EditReport() {
             id: report.id,
             title,
             category,
+            status,
             description,
             photo,
             latitude: report.latitude,
@@ -91,6 +94,17 @@ export default function EditReport() {
                         <option value="Fault">Fault</option>
                         <option value="Fly-tipping">Fly-tipping</option>
                         <option value="Maintenance">Maintenance</option>
+                    </select>
+
+                    <p>Status:</p>
+
+                    <select
+                        value={status}
+                        onChange={(event) => setStatus(event.target.value)}
+                    >
+                        <option value="Open">Open</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Resolved">Resolved</option>
                     </select>
 
                     <p>Upload New Photo:</p>

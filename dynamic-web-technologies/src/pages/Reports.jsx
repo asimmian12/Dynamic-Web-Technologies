@@ -31,6 +31,7 @@ export default function Reports() {
                     <p>Title: {report.title}</p>
                     <p>Category: {report.category}</p>
                     <p>Description: {report.description}</p>
+                    <p>Status: {report.status}</p>
                     <p>Latitude: {report.latitude}</p>
                     <p>Longitude: {report.longitude}</p>
                     <p>

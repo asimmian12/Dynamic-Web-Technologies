@@ -9,6 +9,8 @@ export default function CreateReport() {
     const [photo, setPhoto] = useState([]);
     const webcamRef = useRef(null);
 
+    const [status, setStatus] = useState("Open");
+
     function capturePhoto() {
         const imageSrc = webcamRef.current.getScreenshot();
         setPhoto((previousPhotos) => [
@@ -65,6 +67,18 @@ export default function CreateReport() {
                     <option value="Fly-tipping">Fly-tipping</option>
                     <option value="Maintenance">Maintenance</option>
                 </select>
+
+                <p>Status:</p>
+
+                <select
+                    value={status}
+                    onChange={(event) => setStatus(event.target.value)}
+                >
+                    <option value="Open">Open</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Resolved">Resolved</option>
+                </select>
+
                 <p>Description:</p>
                 <textarea
                     value={description}
@@ -171,6 +185,7 @@ export default function CreateReport() {
             id: Date.now(),
             title,
             category,
+            status,
             description,
             latitude,
             longitude,
@@ -205,6 +220,8 @@ export default function CreateReport() {
         setLongitude("");
 
         setPhoto([]);
+
+        setStatus("Open");
     }
 }
 
