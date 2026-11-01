@@ -6,25 +6,31 @@ export default function CreateReport() {
     const [longitude, setLongitude] = useState("");
 
 
-    const [photo, setPhoto] = useState("");
+    const [photo, setPhoto] = useState([]);
     const webcamRef = useRef(null);
-    
+
     function capturePhoto() {
         const imageSrc = webcamRef.current.getScreenshot();
-        setPhoto(imageSrc);
+        setPhoto((previousPhotos) => [
+            ...previousPhotos,
+            imageSrc
+        ]);
     }
 
     function handlePhotoChange(event) {
         const file = event.target.files[0];
 
-        if (!file){
+        if (!file) {
             return;
         };
 
         const reader = new FileReader();
 
         reader.onloadend = () => {
-            setPhoto(reader.result);
+            setPhoto((previousPhotos) => [
+                ...previousPhotos,
+                reader.result
+            ]);
         };
 
         reader.readAsDataURL(file);
@@ -71,6 +77,7 @@ export default function CreateReport() {
                 <p>Description: {description}</p>
                 <p>Latitude: {latitude}</p>
                 <p>Longitude: {longitude}</p>
+                <p>Photos: {photo.length}</p>
                 <br />
                 <br />
                 <button type="button" onClick={getLocation}>Get Location</button>
@@ -97,13 +104,15 @@ export default function CreateReport() {
                     onChange={handlePhotoChange}
                 />
 
-                {photo && (
+                {photo.map((image, index) => (
                     <img
-                        src={photo}
-                        alt="Captured"
+                        key={index}
+                        src={image}
+                        alt={`Photo ${index + 1}`}
                         width="300"
                     />
-                )}
+                ))}
+
 
                 <button type="submit">
                     Submit
@@ -146,13 +155,13 @@ export default function CreateReport() {
             console.log("Latitude is required");
             return;
         }
-        
+
         if (!longitude) {
             console.log("Longitude is required");
             return;
         }
 
-        if (!photo) {
+        if (photo.length === 0) {
             console.log("Photo is required");
             return;
         }
@@ -195,7 +204,7 @@ export default function CreateReport() {
         setLatitude("");
         setLongitude("");
 
-        setPhoto("");
+        setPhoto([]);
     }
 }
 

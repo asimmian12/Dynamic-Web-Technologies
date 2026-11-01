@@ -40,14 +40,19 @@ export default function Reports() {
                             : "Unknown"}
                     </p>
 
-                    {report.photo && (
+                    {report.photo && report.photo.map((image, index) => (
                         <img
-                            src={report.photo}
-                            alt="Report"
+                            key={index}
+                            src={image}
+                            alt={`Photo ${index + 1}`}
                             width="200"
+                            style={{
+                                marginRight: "10px",
+                                marginBottom: "10px"
+                            }}
                         />
-                    )}
-                    
+                    ))}
+
                     <button
                         onClick={() => navigate(`/reports/${report.id}/edit`)}
                     >

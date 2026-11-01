@@ -25,7 +25,7 @@ export default function EditReport() {
     const [category, setCategory] = useState(report.category);
     const [description, setDescription] = useState(report.description);
 
-    const [photo, setPhoto] = useState(report.photo || "");
+    const [photo, setPhoto] = useState(report.photo || []);
 
     function handlePhotoChange(event) {
         const file = event.target.files[0];
@@ -35,7 +35,10 @@ export default function EditReport() {
         const reader = new FileReader();
 
         reader.onloadend = () => {
-            setPhoto(reader.result);
+            setPhoto((previousPhotos) => [
+                ...previousPhotos,
+                reader.result
+            ]);
         };
 
         reader.readAsDataURL(file);
@@ -97,14 +100,15 @@ export default function EditReport() {
                         accept="image/*"
                         onChange={handlePhotoChange}
                     />
-                    
-                    {photo && (
+
+                    {photo.map((image, index) => (
                         <img
-                            src={photo}
-                            alt="Report"
+                            key={index}
+                            src={image}
+                            alt={`Photo ${index + 1}`}
                             width="300"
                         />
-                    )}
+                    ))}
 
                     <p>Description:</p>
                     <textarea
