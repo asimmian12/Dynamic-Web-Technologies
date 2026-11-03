@@ -188,16 +188,6 @@ export default function CreateReport() {
                 }
         */
 
-        if (!latitude) {
-            console.log("Latitude is required");
-            return;
-        }
-
-        if (!longitude) {
-            console.log("Longitude is required");
-            return;
-        }
-
         if (photo.length === 0) {
             console.log("Photo is required");
             return;
