@@ -1,15 +1,11 @@
-# Dynamic-Web-Technologies
+# Dynamic-Web-Technologies:
 This is my implementation for coursework 4 idea in assessment for dynamic web technologies.
 
-
-<!------------------------------------------------------------------------------------------------> 
 # Overview of Project:
-# Outdoor Site Reporting App
-
+# Outdoor Site Reporting App:
 A React and Vite coursework project for creating reports about issues or observations at a large outdoor site. A report includes a title, category, description, location, photo, and date/time.
 
-## Features
-
+## Features:
 - It creates reports using a title, description, and category: Wildlife, Fault, Fly-tipping, or Maintenance.
 - It retreives the device's location with the browser Geolocation API.
 - This can capture a photo with the device camera or choose an existing image.
@@ -18,15 +14,13 @@ A React and Vite coursework project for creating reports about issues or observa
 
 These reports are stored locally in the browser however, this project does not upload or synchronise them with a server.
 
-## Requirements
-
+## Requirements:
 - Node.js and npm
 - A modern browser
 - Requires GeoLocation settings to be enabled within device.
 - Requires Camera settings to be enabled within device. 
 
-## Install and run
-
+## Install and run:
 1. Clone the repository:
 
    ```bash
@@ -53,8 +47,7 @@ These reports are stored locally in the browser however, this project does not u
 
 5. Open the local URL printed by Vite in your browser (usually `http://localhost:5173`) Or Open it from VSCode with Integreated Browser feature.
 
-## Using the app
-
+## Using the app:
 1. Use the navigation to open the new report page.
 2. Enter a title and description, then select a category.
 3. Select **Get Location** and allow the browser to access your location.
@@ -62,16 +55,14 @@ These reports are stored locally in the browser however, this project does not u
 5. Submit the report. The title, category, description, location, photo, and creation time are saved in the browser.
 6. Open the reports page to view saved reports. Use **Update** to edit a report or **Delete** to remove it.
 
-## Device permissions and troubleshooting
-
+## Device permissions and troubleshooting:
 - The browser will ask permission before using the camera or location. Allow access when prompted.
 - Camera and geolocation generally require a secure context: use `localhost` for local development or an HTTPS deployment. They may not work on an ordinary HTTP address on another device.
 - If location is unavailable, check the device's location settings and browser permissions.
 - Reports are stored per browser and device. Clearing the browser's site data will remove them.
 - Photos are stored with the report in browser storage, which has limited capacity. Avoid storing large or numerous images.
 
-## Available scripts
-
+## Available scripts:
 Run these commands from the `dynamic-web-technologies` app folder:
 
 | Command | Description |
@@ -81,11 +72,11 @@ Run these commands from the `dynamic-web-technologies` app folder:
 | `npm run preview` | Preview the production build locally. |
 | `npm run lint` | Run ESLint. |
 
-## Technology
-
+## Technology:
 - React
 - Vite
 - React Router
-- `react-webcam`
-- Browser Geolocation API
-- Browser `localStorage`
+
+- Hardware API 1 (Geolocation API)
+- Hardware API 2 (Camera API - `react-webcam`)
+- Presistant Data/Storage - `localStorage`
