@@ -2,25 +2,28 @@
 This is my implementation for coursework 4 idea in assessment for dynamic web technologies.
 
 
+<!------------------------------------------------------------------------------------------------> 
+# Overview of Project:
 # Outdoor Site Reporting App
 
 A React and Vite coursework project for creating reports about issues or observations at a large outdoor site. A report includes a title, category, description, location, photo, and date/time.
 
 ## Features
 
-- Create reports using a title, description, and category: Wildlife, Fault, Fly-tipping, or Maintenance.
-- Get the device's location with the browser Geolocation API.
-- Capture a photo with the device camera or choose an existing image.
-- Read, update, and delete saved reports.
-- Keep reports in browser `localStorage` so they remain available in the same browser on the same device after closing and reopening the app.
+- It creates reports using a title, description, and category: Wildlife, Fault, Fly-tipping, or Maintenance.
+- It retreives the device's location with the browser Geolocation API.
+- This can capture a photo with the device camera or choose an existing image.
+- This web application allow CRUD as in read, update, and delete saved reports.
+- It can keep reports in browser `localStorage` so they remain available in the same browser on the same device after closing and reopening the app.
 
-Reports are stored locally in the browser; this project does not upload or synchronise them with a server.
+These reports are stored locally in the browser however, this project does not upload or synchronise them with a server.
 
 ## Requirements
 
 - Node.js and npm
 - A modern browser
-- A camera and location-enabled device for testing the camera and geolocation features
+- Requires GeoLocation settings to be enabled within device.
+- Requires Camera settings to be enabled within device. 
 
 ## Install and run
 
@@ -48,7 +51,7 @@ Reports are stored locally in the browser; this project does not upload or synch
    npm run dev
    ```
 
-5. Open the local URL printed by Vite in your browser (usually `http://localhost:5173`).
+5. Open the local URL printed by Vite in your browser (usually `http://localhost:5173`) Or Open it from VSCode with Integreated Browser feature.
 
 ## Using the app
 
