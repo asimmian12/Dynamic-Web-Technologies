@@ -52,13 +52,28 @@ export default function Reports() {
                             }}
                         />
                     ))}
+                    <br />
+                    
+                    <button
+                        onClick={() => navigate(`/reports/${report.id}`)}
+                    >
+                        View Details
+                    </button>
+                    
+                    <br />
 
                     <button
                         onClick={() => navigate(`/reports/${report.id}/edit`)}
                     >
                         Update
                     </button>
-                    <button onClick={() => deleteReport(report.id)}>Delete</button>
+                    
+                    <br />
+
+                    <button onClick={() => deleteReport(report.id)}>
+                        Delete
+                    </button>
+
                 </div>
 
             ))}
