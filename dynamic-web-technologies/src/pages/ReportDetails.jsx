@@ -2,11 +2,16 @@ import React from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 
 export default function ReportDetails() {
+    
     const { id } = useParams();
+    
     const navigate = useNavigate();
+    
     const reports = JSON.parse(
         localStorage.getItem("reports")
     ) || [];
+
+
     const report = reports.find(
         report => report.id === Number(id)
     );
