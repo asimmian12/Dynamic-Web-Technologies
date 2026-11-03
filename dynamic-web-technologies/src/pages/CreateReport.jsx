@@ -102,21 +102,27 @@ export default function CreateReport() {
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
                 />
-
+                <br />
+                <br />
                 <button
                     type="button"
                     onClick={capturePhoto}
                 >
                     Take Photo
                 </button>
-
+                <br />
+                <br />
                 <p>OR Upload Existing Photo:</p>
-
+                <br />
+                <br />
                 <input
                     type="file"
                     accept="image/*"
                     onChange={handlePhotoChange}
                 />
+                <br />
+                <br />
+                
 
                 {photo.map((image, index) => (
                     <img
