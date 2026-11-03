@@ -155,89 +155,99 @@ export default function CreateReport() {
         );
     }
 
-        function handleSubmit(event) {
-            event.preventDefault();
-            console.log("Submit clicked");
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log("Submit clicked");
 
-            if (!title) {
-                console.log("Title is required");
-                return;
-            }
-
-            if (!category) {
-                console.log("Category is required");
-                return;
-            }
-
-            if (!description) {
-                console.log("Description is required");
-                return;
-            }
-    /*
-        TODO:
-        
-        Need to confirm whether this is working as intended. It seems to be preventing the report from being saved if latitude, longitude, or photo are not provided. This may be intentional, but it could also be a bug if the user is allowed to submit reports without these fields.
-            
-            if (!latitude) {
-                console.log("Latitude is required");
-                return;
-            }
-
-            if (!longitude) {
-                console.log("Longitude is required");
-                return;
-            }
-    */
-            if (photo.length === 0) {
-                console.log("Photo is required");
-                return;
-            }
-
-            const reportData = {
-                id: Date.now(),
-                title,
-                category,
-                status,
-                description,
-                latitude,
-                longitude,
-                photo,
-                createdAt: new Date().toISOString()
-            };
-
-            const savedReports = localStorage.getItem("reports");
-
-            const reports = savedReports
-                ? JSON.parse(savedReports)
-                : [];
-
-            const updatedReports = [
-                ...reports,
-                reportData
-            ];
-
-            console.log("Saving report...");
-            localStorage.setItem(
-                "reports",
-                JSON.stringify(updatedReports)
-            );
-
-            console.log(reportData);
-            console.log(updatedReports);
-            console.log("Saved report.");
-
-            setTitle("");
-            setCategory("");
-            setDescription("");
-
-            setLatitude("");
-            setLongitude("");
-
-            setPhoto([]);
-
-            setStatus("Open");
+        if (!title) {
+            console.log("Title is required");
+            return;
         }
+
+        if (!category) {
+            console.log("Category is required");
+            return;
+        }
+
+        if (!description) {
+            console.log("Description is required");
+            return;
+        }
+        /*
+            TODO:      
+            Need to confirm whether this is working as intended. It seems to be preventing the report from being saved if latitude, longitude, or photo are not provided. This may be intentional, but it could also be a bug if the user is allowed to submit reports without these fields.
+                
+                if (!latitude) {
+                    console.log("Latitude is required");
+                    return;
+                }
+    
+                if (!longitude) {
+                    console.log("Longitude is required");
+                    return;
+                }
+        */
+
+        if (!latitude) {
+            console.log("Latitude is required");
+            return;
+        }
+
+        if (!longitude) {
+            console.log("Longitude is required");
+            return;
+        }
+
+        if (photo.length === 0) {
+            console.log("Photo is required");
+            return;
+        }
+
+        const reportData = {
+            id: Date.now(),
+            title,
+            category,
+            status,
+            description,
+            latitude,
+            longitude,
+            photo,
+            createdAt: new Date().toISOString()
+        };
+
+        const savedReports = localStorage.getItem("reports");
+
+        const reports = savedReports
+            ? JSON.parse(savedReports)
+            : [];
+
+        const updatedReports = [
+            ...reports,
+            reportData
+        ];
+
+        console.log("Saving report...");
+        localStorage.setItem(
+            "reports",
+            JSON.stringify(updatedReports)
+        );
+
+        console.log(reportData);
+        console.log(updatedReports);
+        console.log("Saved report.");
+
+        setTitle("");
+        setCategory("");
+        setDescription("");
+
+        setLatitude("");
+        setLongitude("");
+
+        setPhoto([]);
+
+        setStatus("Open");
     }
+}
 
 
 
