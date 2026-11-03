@@ -32,6 +32,9 @@ export default function ReportDetails() {
                     width="300"
                     style={{
                         marginRight: "10px",
+                        display: "flex",
+                        alignItems: "center",
+                        flexDirection: "column",
                         marginBottom: "10px"
                     }}
                 />
