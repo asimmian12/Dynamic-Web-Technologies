@@ -8,7 +8,7 @@ export default function Navbar() {
           <span className="brand-mark" aria-hidden="true">R</span>
           <span className="brand-copy">
             <strong>ReportHub</strong>
-            <span>Airside operations</span>
+            <span>Glasgow operations</span>
           </span>
         </NavLink>
 
