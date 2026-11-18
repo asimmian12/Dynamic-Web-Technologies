@@ -82,6 +82,10 @@ export default function CreateReport() {
             },
             (error) => {
                 setMessage(error.message);
+            },
+            {
+                enableHighAccuracy: false,
+                timeout: 30000,
             }
         );
     }
@@ -404,7 +408,7 @@ export default function CreateReport() {
                             <p>A title, category, description, location, and at least one photo are needed.</p>
                         </div>
                     </div>
-                    
+
                     {/* Message container */}
                     {message && <p className="form-message message-error">{message}</p>}
                     {/* Submit button */}
