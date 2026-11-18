@@ -16,9 +16,9 @@ export default function CreateReport() {
     const webcamRef = useRef(null);
 
 
-    
+
     // Webcam
-    // To capture a photo using the webcam, check if the webcam is ready and then add the captured image to the photo state. If the webcam is not ready, display an error message.
+    // To take a photo using the webcam, check if the webcam is ready and then add the captured image to the photo state. If the webcam is not ready, display an error message.
     function capturePhoto() {
         // Get the screenshot from the webcam reference from image. This will return a base64-encoded image string.
         const image = webcamRef.current.getScreenshot();
@@ -201,7 +201,7 @@ export default function CreateReport() {
                     {/* Heading for the new report section */}
                     <h1>New report</h1>
                     {/* Introduction for the new report section */}
-                    <p className="page-intro">Capture the details now. You can update the status as work progresses.</p>
+                    <p className="page-intro">Record the details now. You can update the status as work progresses.</p>
                 </div>
                 {/* Saved on Device badge */}
                 <span className="local-badge"><span></span> Saved on Device</span>
@@ -337,7 +337,7 @@ export default function CreateReport() {
                             <Webcam
                                 // Set the class name for the webcam component to "camera-preview" for styling purposes.
                                 className="camera-preview"
-                                // Disable audio capture in the webcam component, as only photo evidence is needed for the report.
+                                // Disable audio recording in the webcam component, as only photo evidence is needed for the report.
                                 audio={false}
                                 // Set the reference for the webcam component to the webcamRef created earlier.s
                                 ref={webcamRef}

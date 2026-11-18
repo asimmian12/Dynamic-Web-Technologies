@@ -125,7 +125,7 @@ export default function Home() {
                         {/* Spand texts */}
                         <span className="stat-label">Ready when you are</span>
                         {/* String text */}
-                        <strong className="stat-action-title">Capture a new finding</strong>
+                        <strong className="stat-action-title">Recording a brand new finding</strong>
                         {/* Link to Create a new report */}
                         <Link to="/reports/new">Start a report <span aria-hidden="true">↗</span></Link>
                     </article>
