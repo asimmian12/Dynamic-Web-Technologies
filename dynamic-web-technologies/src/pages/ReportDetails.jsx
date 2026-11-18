@@ -24,6 +24,7 @@ export default function ReportDetails() {
 
     // If the report is not found, display an error message and a link to return to the reports list
     if (!report) {
+        
         return (
             // Rendder an empty state message indicating that the report was not found
             <div className="empty-state page-empty">
