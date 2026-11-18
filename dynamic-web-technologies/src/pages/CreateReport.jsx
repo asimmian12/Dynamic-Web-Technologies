@@ -71,20 +71,9 @@ export default function CreateReport() {
     function getLocation() {
         if (!navigator.geolocation) {
             setMessage("Location is not supported by this browser.");
-            setMessage("Location is not supported by this browser.");
             return;
         }
 
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                setLatitude(position.coords.latitude);
-                setLongitude(position.coords.longitude);
-                setMessage("Location added.");
-            },
-            (error) => {
-                setMessage(error.message);
-            }
-        );
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 setLatitude(position.coords.latitude);
@@ -129,13 +118,6 @@ export default function CreateReport() {
             latitude: latitude,
             longitude: longitude,
             photo: photo,
-            title: title,
-            category: category,
-            status: status,
-            description: description,
-            latitude: latitude,
-            longitude: longitude,
-            photo: photo,
             createdAt: new Date().toISOString()
         };
 
@@ -168,7 +150,6 @@ export default function CreateReport() {
         setTitle("");
         setCategory("");
         setDescription("");
-        setStatus("Open");
         setStatus("Open");
         setLatitude("");
         setLongitude("");
