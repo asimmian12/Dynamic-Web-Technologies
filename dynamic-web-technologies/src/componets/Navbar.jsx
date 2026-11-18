@@ -2,20 +2,27 @@ import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav>
-      <NavLink to="/">Home</NavLink>
-      
-      <br />
-      
-      <NavLink to="/reports/new">Create Report</NavLink>
-      
-      <br />
-      
-      <NavLink to="/reports">Reports</NavLink>
-      
-      <br />
+    <header className="site-header">
+      <div className="header-inner">
+        <NavLink className="brand" to="/" aria-label="ReportHub home">
+          <span className="brand-mark" aria-hidden="true">R</span>
+          <span className="brand-copy">
+            <strong>ReportHub</strong>
+            <span>Airside operations</span>
+          </span>
+        </NavLink>
 
-    </nav>
+        <nav className="main-nav" aria-label="Main navigation">
+          <NavLink to="/" end>Overview</NavLink>
+          <NavLink to="/reports">Reports</NavLink>
+        </nav>
+
+        <NavLink className="button button-primary header-action" to="/reports/new">
+          <span aria-hidden="true">+</span>
+          New report
+        </NavLink>
+      </div>
+    </header>
   );
 }
 
