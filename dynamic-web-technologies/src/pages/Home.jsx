@@ -86,8 +86,9 @@ export default function Home() {
                     <div className="art-coordinate coordinate-one">51°28′39.0″N</div>
                     <div className="art-coordinate coordinate-two">000°27′41.0″W</div>
                     <div className="art-caption">
+                        {/* Span for Site Status */}
                         <span></span>
-                        Site Status <strong>On The Ground</strong>
+                        Website Status <strong>On The Ground</strong>
                     </div>
                 </div>
             </section>
