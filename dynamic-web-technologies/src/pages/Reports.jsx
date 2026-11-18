@@ -4,16 +4,23 @@ import { Link, useNavigate } from "react-router-dom";
 
 // Export the Reports component
 export default function Reports() {
+    
     // Retrieve reports from localStorage and initialise state variables
     const data = localStorage.getItem("reports");
+    
     // Initialise reports state with parsed data or an empty array
     const [reports, setReports] = useState(data ? JSON.parse(data) : []);
+   
     // Initialise search and filter state variables
     const [search, setSearch] = useState("");
+   
     // Initialise filter state variable with default value "All statuses"
     const [filter, setFilter] = useState("All statuses");
+   
     // Initialise navigate function from useNavigate hook
     const navigate = useNavigate();
+
+
 
     // Function to delete a report by its id
     function deleteReport(id) {

@@ -15,6 +15,8 @@ export default function CreateReport() {
     const [message, setMessage] = useState("");
     const webcamRef = useRef(null);
 
+
+    
     // Webcam
     // To capture a photo using the webcam, check if the webcam is ready and then add the captured image to the photo state. If the webcam is not ready, display an error message.
     function capturePhoto() {

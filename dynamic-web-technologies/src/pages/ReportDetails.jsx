@@ -3,13 +3,17 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 
 // Export the ReportDetails component 
 export default function ReportDetails() {
+   
     // Get the report ID from the URL parameters and initialise the navigate function
     const { id } = useParams();
+  
     // Initialise the navigate function
     const navigate = useNavigate();
 
     // Retrieve the reports from localStorage and parse them into an array
+  
     const stored = localStorage.getItem("reports");
+   
     // Parse the stored reports or set to an empty array if none exist
     const reports = stored ? JSON.parse(stored) : [];
 

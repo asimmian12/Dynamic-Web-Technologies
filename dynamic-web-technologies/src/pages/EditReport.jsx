@@ -15,6 +15,8 @@ function EditReportForm({ report }) {
     // Used photos as an array to handle photo evidence, allowing for multiple photos to be added or removed
     let photos = [];
 
+
+    
     // Check if the report has photo evidence and set the initial state accordingly
     if (Array.isArray(report.photo)) {
         // If the report has multiple photos, set the photos state to the array of photos
