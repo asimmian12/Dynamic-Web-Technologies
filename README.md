@@ -5,7 +5,7 @@ This is my implementation for coursework 4 idea in assessment for dynamic web te
 # Outdoor Site Reporting App:
 A React and Vite coursework project for creating reports about issues or observations at a large outdoor site. A report includes a title, category, description, location, photo, and date/time.
 
-**Live app:** 
+## Live app 
 https://dynamic-web-technologies.vercel.app
 
 ## Features
