@@ -22,7 +22,7 @@ export default function App() {
           </Routes>
         </main>
         <footer className="site-footer">
-          <span>REPORTHUB</span>
+          <span>ReportHub</span>
           <span>Private workspace · reports stay on this device</span>
         </footer>
       </div>
